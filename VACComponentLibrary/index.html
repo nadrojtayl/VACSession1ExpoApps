@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Components</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+<body>
+	<div class="columns">
+		<div class="column is-one-quarter">
+			<aside class="menu">
+			  <p class="menu-label">
+			    Components
+			  </p>
+			  <ul class="menu-list">
+			    <li><a name = "Panels">Panels</a></li>
+			    <li name = "Panels"><a>DropdownContent</a></li>
+			    <li><a>DisplayInfo</a></li>
+			    <li><a>CollectInfo</a></li>
+			    <li><a>SearchBarFilteredList</a></li>
+			  </ul>
+			</aside>
+		</div>
+<div class="column">
+   <h2 id="Panels">Panels</h2>
+	<br>
+	<p>Panels is a component that allows you to create an area with content determined when the user clicks on a top row of buttons</p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Prop Name">Prop Name</abbr></th>
+      <th>Type</th>
+      <th>Required</th>
+      <th><abbr title="Description">Description</abbr></th>
+      <th><abbr title="Description">Example</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+  	   <tr id = "panel">
+      <th>options</th>
+      <td> Array</td>
+      <td> Yes</td>
+      <td>An array that defines how many different buttons will appear on top of the panel. Each one will display different content.</td>
+      <td>["MenuA","MenuB","MenuC"]</td>
+    </tr>
+    <tr>
+      <th>Panel1 (Or Panel2...Panel3...Panel4...)</th>
+      <td> JSX</td>
+      <td> Yes</td>
+      <td>JSX for the content that should appear in each panel</td>
+      <td> panel0 = {
+            (
+            <View>
+              <TitleText>PANEL 1 CONTENT</TitleText>
+            </View>
+            )
+          }
+    </td>
+    </tr>
+    <tr>
+      <th>ButtonStyle</th>
+      <td> StyleObject</td>
+      <td> No</td>
+      <td>Sets the style for the menu buttons at the top of the panel</td>
+      <td> panel0 = {
+            (
+            <View>
+              <TitleText>PANEL 1 CONTENT</TitleText>
+            </View>
+            )
+          }
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2 id="DropdownContent">DropdownContent</h2>
+	<br>
+	<p>DropdownContent is a component that allows you to create an area with content determined when the user selects a dropdown</p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Prop Name">Prop Name</abbr></th>
+      <th>Type</th>
+      <th>Required</th>
+      <th><abbr title="Description">Description</abbr></th>
+      <th><abbr title="Description">Example</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+  	   <tr id = "panel">
+      <th>options</th>
+      <td> Array</td>
+      <td> Yes</td>
+      <td>An array that defines how many different options will appear in the top dropdown. Each one will display different content.</td>
+      <td>["MenuA","MenuB","MenuC"]</td>
+    </tr>
+    <tr>
+      <th>Panel1 (Or Panel2...Panel3...Panel4...)</th>
+      <td> JSX</td>
+      <td> Yes</td>
+      <td>JSX for the content that should appear in each panel</td>
+      <td> panel0 = {
+            (
+            <View>
+              <TitleText>PANEL 1 CONTENT</TitleText>
+            </View>
+            )
+          }
+    </td>
+    </tr>
+    <tr>
+      <th>DropdownStyle</th>
+      <td> StyleObject</td>
+      <td> No</td>
+      <td>Sets the style for the dropdown</td>
+      <td> {width:"100%"}
+    </td>
+    </tr>
+     
+  </tbody>
+</table>
+
+
+
+<h2 id="DropdownContent">CollectInfo</h2>
+  <br>
+  <p>CollectInfo is a component that creates a button which raises a popup to send information to a remote server and database. The schema for the server is determined programatically</p>
+  <table class="table">
+  <thead>
+    <tr>
+      <th><abbr title="Prop Name">Prop Name</abbr></th>
+      <th>Type</th>
+      <th>Required</th>
+      <th><abbr title="Description">Description</abbr></th>
+      <th><abbr title="Description">Example</abbr></th>
+    </tr>
+  </thead>
+  <tbody>
+       <tr id = "panel">
+      <th>url</th>
+      <td>String</td>
+      <td> Yes</td>
+      <td>A url to your heroku database setup from VAC</td>
+      <td>"http://www.my_server.com/table"</td>
+    </tr>
+    <tr>
+      <th>ContainerStyle</th>
+      <td> StyleObject</td>
+      <td> Yes</td>
+      <td>Styling for the popup container that gets information</td>
+      <td> {width:"100%",alignItems:"center"}
+    </td>
+    </tr>
+    <tr>
+      <th>ButtonStyle</th>
+      <td> StyleObject</td>
+      <td> No</td>
+      <td>Sets the style for the dropdown at</td>
+      <td>{width:"100%",alignItems:"center"}
+          }
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+		</div>
+	</div>
+</body>
+</html>
