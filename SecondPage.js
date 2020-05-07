@@ -37,7 +37,7 @@ send(){ 
     return (
       <View style = {{height: "100%"}}>
       <View style={{ alignItems: "center",
-      backgroundColor: "#dc143c",
+      backgroundColor: "transparent", paddingTop:"10%",
       height:"90%" }}>
          {/* <LinearGradient
           colors={['#dc143c', '#9198e5']}> */}
@@ -46,7 +46,7 @@ send(){ 
             textAlign: "center",
             fontWeight: "bold",
             fontSize: "32px",
-            color: "white"
+            color: "#dc143c"
           }}
         >
           Pong
@@ -55,10 +55,10 @@ send(){ 
           style={{
             textAlign: "center",
             fontSize: "16px",
-            color:"white"
+            color:"#dc143c"
           }}
         >
-          College/University
+          Add Rules for your School
         </Text>
     <View style = {{justifyContent: "space", flexDirection: "column"}}>
       <Button
@@ -80,7 +80,7 @@ send(){ 
       }}
       value={this.state.collegeValue}
       placeholder = {"Enter College/University"}
-      color = "white"
+      color = "#dc143c"
       />
           <TextInput
       style={{ height: 400,width: 300, borderColor: 'gray', borderWidth: 1 }}
@@ -90,14 +90,21 @@ send(){ 
       }}
       value={this.state.inputValue}
       placeholder = {"Type here..."}
-      color = "white"
+      color = "#dc143c"
       />
       <Button
           title="Save"
           onPress={() => {that.send.bind(that)()}}
-          color = "transparent"
+          color = "#dc143c"
           />
     </View>
+     <Button
+          title="Back"
+          onPress={() => {that.props.parent.setState({destination:"FrontPage"})}}
+          
+          color = "#dc143c"
+          />
+  
       <View style={{
             alignItems: "center",
             justifyContent: "center"

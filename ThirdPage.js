@@ -1,9 +1,13 @@
 import React, { Component } from "react";
-import { Button, Image, Text, View, TextInput, SectionList, StyleSheet, LinearGradient} from "react-native";
+import { Button, Image, Dimensions, Text, View, TextInput, SectionList, StyleSheet, LinearGradient} from "react-native";
 // import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 function do_alert (){
   return alert("Hello! I am an alert box!!");
 }
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+
 class App extends Component {
 
   constructor(props){ 
@@ -16,29 +20,11 @@ class App extends Component {
     return (
       <View style = {{height: "100%"}}>
       <View style={{ alignItems: "center",
-      backgroundColor: "#dc143c",
+      backgroundColor: "transparent",
+      paddingTop:height*0.1,
       height:"90%" }}>
          {/* <LinearGradient
           colors={['#dc143c', '#9198e5']}> */}
-        <Text
-          style={{
-            textAlign: "center",
-            fontWeight: "bold",
-            fontSize: "32px",
-            color: "white"
-          }}
-        >
-          Pong
-        </Text>
-        <Text
-          style={{
-            textAlign: "center",
-            fontSize: "16px",
-            color:"white"
-          }}
-        >
-          College/University
-        </Text>
       <Button
           title="Go Back"
           onPress={() => {that.props.parent.setState({destination:"FrontPage"})}
@@ -50,7 +36,7 @@ class App extends Component {
           }}>
           <Text style = {{textAlign: 'center',
         fontSize: '13px',
-        color:"white",
+        color:"#dc143c",
         justifyContent: "center"}}>
         These are the Rules
         </Text>

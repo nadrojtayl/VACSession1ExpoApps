@@ -28,7 +28,7 @@ class App extends Component {
   }
   render() {
     var that = this;
-    console.log("here")
+ 
 
     if(that.state.destination === "FrontPage"){
       return (<View style = {{width:"100%",height:"100%"}}>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   app: {
     marginHorizontal: "auto",
     maxWidth: 500,
-    backgroundColor:'red'
+    backgroundColor:'transparent'
   },
   logo: {
     height: 80
