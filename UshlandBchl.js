@@ -59,11 +59,9 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    marginVertical: "1em",
     textAlign: "center"
   },
   text: {
-    marginVertical: "1em",
     textAlign: "center"
   },
   link: {

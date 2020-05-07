@@ -1,6 +1,11 @@
 import React, { Component } from "react";
-import { Button, Image, Text, View, TextInput, ScrollView } from "react-native";
+import { Button, StyleSheet, Image, Text, View, Dimensions, TextInput, ScrollView } from "react-native";
 import {Panels, DropdownContent} from "./VACComponentLibrary/Components.js"; 
+
+
+const width = Dimensions.get('window').width;
+const height = Dimensions.get('window').height;
+
 class App extends Component {
 
   render() {
@@ -8,18 +13,26 @@ class App extends Component {
     return (
 
 <View style={{ alignItems: "center" }}>
-   <Image  source={{
-          uri: '/img.png'
-        }}
+ <Image  source={require('./assets/angryimg.png')
+        }
 
-        style = {{height:"30%",width:"30%", opacity:"50%"}}
+        style = {{opacity:1, zIndex: -500, position:'absolute', height:height, width:width}}
+
+        >
+      </Image>
+   <Image  source={require('./assets/img.png')
+        }
+
+        style = {{opacity:1, zIndex: -500, height:height*0.3, width:width}}
 
         >
       </Image>
     <Text
       style={{
+        paddingBottom:height*0.05,
         textAlign: "center",
         fontWeight: "bold",
+        fontSize: height*0.05,
         color:"#FFF388"
       }}>
       MY FUTURE
@@ -28,42 +41,81 @@ class App extends Component {
     <Text
     style={{
         textAlign: "center",
+        fontSize: height*0.05,
         color:"black"}}>
         </Text>
         <Text
-        style={{color:"#FFF388",fontWeight:"bold", textAlign:'center', fontSize:"30px"}}>
-      Get to the Next Level: See Other Athletes Daily Schedules
+        style={{paddingBottom:height*0.05, color:"#FFF388", paddingTop:height*0.05,fontWeight:"bold", textAlign:'center', fontSize:"30px"}}>
+      Get to the Next Level: See Other Hockey Athletes Daily Schedules
       {'\n'}  </Text>
 
 
      
-      <View
-        style = {{flexDirection:"row" ,justifyContent:"space-around"}}>
-        <ScrollView horizontal = {true}>
-        <Text>  </Text>
-        <Button style = {{backgroundColor:"red", color:'red'}} onPress={() => {that.props.parent.setState({destination:"FourthPage"})}} title="lacrosse" />
-        <Text>  </Text>
-        <Text>  </Text>
-        <Text>  </Text>
-        <Button onPress={() => {that.props.parent.setState({destination:"FifthPage"})}} title="basketball" />
-        <Text>  </Text>
-        <Text>  </Text>
-        <Text>  </Text>
-        <Button onPress={() => {that.props.parent.setState({destination:"SixthPage"})}} title="baseball" />
-        </ScrollView>
-      </View>
 
-      <View
-        style = {{flexDirection:"row"}}>
-        <Button onPress={() => {that.props.parent.setState({destination:"Abouttheplayers" })}} title="About the players" />
-        <Text>  </Text>
-        <Text>  </Text>
-        <Text>  </Text>
-  </View>
+
+          <Text >High School</Text>
+        <View style = {{flexDirection:'row'}}>
+          <ScrollView horizontal = {true}>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "boarding school" />
+            <Text>  </Text>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "day school" />
+            <Text>  </Text>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "public school" />
+          </ScrollView>
+        </View>
+        <Text >College</Text>
+          <View
+          style = {{flexDirection:"row" }}>
+          <ScrollView horizontal = {true}>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "Ivy League" />
+            <Text>  </Text>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "NESCAC" />
+            <Text>  </Text>
+            <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "Top universities for lacrosse" />
+          </ScrollView>
+        </View>
+         <Text>Pro</Text>
+          <View
+          style = {{flexDirection:"row" }}>
+            <ScrollView horizontal = {true}>
+              <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "PLL" />
+             
+              <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "MLL" />
+             
+             <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}} title= "NLL" />
+            </ScrollView> 
+        </View>
+
   </View>
 );
 }
 }
 
+const styles = StyleSheet.create({
+  app: {
+    marginHorizontal: "auto",
+    maxWidth: 500,
+    backgroundColor:'white',
+    height:"100%"
+  },
+  logo: {
+    height: 80
+  },
+  title: {
+    fontWeight: "bold",
+    textAlign: "center"
+  },
+  text: {
+    textAlign: "center"
+  },
+  link: {
+    color: "#1B95E0"
+  },
+  code: {
+    fontFamily: "monospace, monospace"
+  }
+});
+
 
 export default App;
+
