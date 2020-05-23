@@ -44,10 +44,19 @@ send(){ 
           'Content-Type': 'application/json'
         },
         body:JSON.stringify({crud_operation:"create", obj:obj, address:that.props.parent.state.writeAddress})
-      })
+      }).then((response) => response.json())
       .then(function(data){
+        console.log("HEREN")
         console.log(data);
-        
+        if(typeof data === "object"){
+
+          that.setState({inputValue:"",collegeValue:""},function(){
+            alert("Congratulations! You set the rules for " + data.College);
+            that.props.parent.setState({destination:"FrontPage"});
+          })
+
+        }
+
       });
     }
 
