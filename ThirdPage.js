@@ -15,6 +15,8 @@ class App extends Component {
       this.state = {inputValue:""} 
     } 
 
+   
+
   render() {
     var that = this;
     return (
@@ -38,7 +40,7 @@ class App extends Component {
         fontSize: '13px',
         color:"#dc143c",
         justifyContent: "center"}}>
-        These are the Rules
+        {that.props.parent.state.selectedRules}
         </Text>
         </View>
       <View style={{
@@ -52,13 +54,13 @@ class App extends Component {
 
       <View style = {{flexDirection:"row" ,justifyContent:"space-around", height: "10%", backgroundColor: "#fc123c"}}>
       <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}}
-      color = "transparent"
+      color = "white"
       title="House Rules" />
       <Text>  </Text>
       <Button onPress={() => {}} color = "transparent" title="Brackets" />
       <Text>  </Text>
       <Button onPress={() => {that.props.parent.setState({destination:"FourthPage"})}}
-       color = "transparent"
+       color = "white"
        title="Queue Up" />
     </View>
     </View>

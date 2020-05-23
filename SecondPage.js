@@ -32,12 +32,32 @@ send(){ 
     that.setState({"hidden":true}) 
   })  
 } 
+
+   write(obj){
+    var that = this;
+    console.log(that.props.parent.state)
+    var that = this;
+      fetch('https://hidden-lowlands-88243.herokuapp.com/db', {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body:JSON.stringify({crud_operation:"create", obj:obj, address:that.props.parent.state.writeAddress})
+      })
+      .then(function(data){
+        console.log(data);
+        
+      });
+    }
+
+
   render() {
     var that = this;
     return (
       <View style = {{height: "100%"}}>
       <View style={{ alignItems: "center",
-      backgroundColor: "transparent", paddingTop:"10%",
+      backgroundColor: "white", paddingTop:"10%",
       height:"90%" }}>
          {/* <LinearGradient
           colors={['#dc143c', '#9198e5']}> */}
@@ -94,7 +114,7 @@ send(){ 
       />
       <Button
           title="Save"
-          onPress={() => {that.send.bind(that)()}}
+          onPress={() => {that.write({College:that.state.collegeValue,Rules:that.state.inputValue})}}
           color = "#dc143c"
           />
     </View>
@@ -116,13 +136,13 @@ send(){ 
 
       <View style = {{flexDirection:"row" ,justifyContent:"space-around", height: "10%", backgroundColor: "#fc123c"}}>
       <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}}
-      color = "transparent"
+      color = "white"
       title="House Rules" />
       <Text>  </Text>
-      <Button onPress={() => {}} color = "transparent" title="Brackets" />
+      <Button onPress={() => {}} color = "white" title="Brackets" />
       <Text>  </Text>
       <Button onPress={() => {that.props.parent.setState({destination:"FourthPage"})}}
-       color = "transparent"
+       color = "white"
        title="Queue Up" />
     </View>
     </View>

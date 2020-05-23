@@ -24,7 +24,8 @@ var data =  fetch('https://mywebsite.com/mydata.json');
 class App extends Component {
   constructor(props){
     super(props);
-    this.state = {destination:"FrontPage"}
+    this.state = {destination:"FrontPage",
+    writeAddress:"c25efd30d05b"}
   }
   render() {
     var that = this;
