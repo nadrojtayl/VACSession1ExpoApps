@@ -160,7 +160,7 @@ class App extends Component {
       <Button onPress={() => {that.props.parent.setState({destination:"FrontPage"})}}
       color="white"
       title="House Rules" />
-      <Button style = {{color:'black'}} onPress={() => {that.props.parent.setState({destination:"FourthPage"})}}
+      <Button style = {{color:'black'}} onPress={() => {that.props.parent.setState({destination:"FifthPage"})}}
       color="white"
       title="Privacy" />
     </View>
