@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button, Image, Text, Dimensions, View, TextInput, SectionList, StyleSheet, LinearGradient, ScrollView} from "react-native";
 import {Panels, DropdownContent} from "./VACComponentLibrary/Components.js"; 
 // import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import {college_list} from "./colleges.js"
 function do_alert (){
   return alert("Hello! I am an alert box!!");
 }

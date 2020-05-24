@@ -29,6 +29,7 @@ class App extends Component {
           colors={['#dc143c', '#9198e5']}> */}
       <Button
           title="Go Back"
+          color = "#dc143c"
           onPress={() => {that.props.parent.setState({destination:"FrontPage"})}
         }
           />

@@ -1,41 +1,50 @@
 import React, { Component } from "react";
 import { Button, Image, Text, View, TextInput, SectionList, StyleSheet, LinearGradient} from "react-native";
 // import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
+import college_list from "./colleges.js"
+console.log("HEREN")
+console.log(Object.keys(college_list))
 function do_alert (){
   return alert("Hello! I am an alert box!!");
 }
-var colleges = ["Bucknell", "Lehigh", "University of Miami"]
+
 class App extends Component {
 
   constructor(props){ 
       super(props); 
-      this.state = {inputValue:"", collegeValue:""} 
+      this.state = {collegeEmail:"", inputValue:"", collegeValue:"", college_emails:[]} 
     } 
-send(){ 
-  var url = "https://whispering-river-96325.herokuapp.com/table?table=colleges&schema=true";
- console.log(url) 
-  var body = JSON.stringify({
-    college_name:this.state.collegeValue,
-    college_rules:this.state.inputValue
-  }); 
-  var that = this; 
-  var schema = fetch(url, { 
-    method: 'POST', 
-    body:body, 
-    headers: { 
-      "Content-Type": "application/json", 
-      "Accept": "application/json" 
-    } 
-  }).then(function(res){ 
-    console.log(res)
-    alert("Saved!") 
-    that.setState({"hidden":true}) 
-  })  
-} 
+
+    componentDidMount(){
+     var colleges = college_list.college_list.map(function(str){
+        return str.substring(
+            str.lastIndexOf("(") + 1, 
+            str.lastIndexOf(")")
+        );
+      })
+
+     var colleges_2 = college_list.college_list_2.map(function(str){
+        return str.substring(
+            str.lastIndexOf("(") + 1, 
+            str.lastIndexOf(")")
+        );
+      })
+
+
+
+     this.setState({college_emails:colleges.concat(colleges_2)});
+    }
+
+  
+
 
    write(obj){
     var that = this;
-    console.log(that.props.parent.state)
+    
+    if(that.state.college_emails.indexOf(that.state.collegeEmail) === -1){
+      alert("Sorry, we didn't recognize your college. We add new colleges everyday so check back later.")
+      return
+    }
     var that = this;
       fetch('https://hidden-lowlands-88243.herokuapp.com/db', {
         method: 'POST',
@@ -94,21 +103,29 @@ send(){ 
           title="Go Back"
           onPress={() => {that.props.parent.setState({destination:"FrontPage"})}
         }
-        color = "transparent"
+        color = "#dc143c"
           />
           <TextInput
       style={{ height: 50,width: 300, borderColor: 'gray', borderWidth: 1 }}
       onChangeText={function(text){
-        if (colleges.indexOf(text)!== -1){
-          alert("that already exists")
-        } else {
-
-        }
+        
         that.setState({collegeValue:text
         })
       }}
       value={this.state.collegeValue}
       placeholder = {"Enter College/University"}
+      color = "#dc143c"
+      />
+       <TextInput
+      style={{ height: 50,width: 300, borderColor: 'gray', borderWidth: 1 }}
+      onChangeText={function(text){
+        
+        
+        that.setState({collegeEmail:text
+        })
+      }}
+      value={this.state.collegeEmail}
+      placeholder = {"Enter College Email Suffix (like @asu.edu)"}
       color = "#dc143c"
       />
           <TextInput
@@ -148,11 +165,11 @@ send(){ 
       color = "white"
       title="House Rules" />
       <Text>  </Text>
-      <Button onPress={() => {}} color = "white" title="Brackets" />
       <Text>  </Text>
-      <Button onPress={() => {that.props.parent.setState({destination:"FourthPage"})}}
+      <Button 
+      onPress={() => {that.props.parent.setState({destination:"FifthPage"})}}
        color = "white"
-       title="Queue Up" />
+       title="Privacy" />
     </View>
     </View>
     );
