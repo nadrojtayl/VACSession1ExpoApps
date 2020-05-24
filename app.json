@@ -22,7 +22,22 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.pongrules.pongrules",
+      "publishBundlePath": "ios/vacjasonapp/Supporting/shell-app.bundle",
+      "publishManifestPath": "ios/vacjasonapp/Supporting/shell-app-manifest.json"
+    },
+    "sdkVersion": "37.0.0",
+    "isDetached": true,
+    "detach": {
+      "iosExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/ios-v2.15.4-sdk37.0.0-43bca382-d6ca-4b3f-930c-eee5f23d18e2.tar.gz",
+      "androidExpoViewUrl": "https://s3.amazonaws.com/exp-exponent-view-code/android-v2.15.0-sdk37.0.0-25317bc5-e70a-4ffb-b59f-8e2b6fcdd8ce.tar.gz"
+    },
+    "scheme": "expc502519d89d94bf59a40e6fa5f0bc93d",
+    "android": {
+      "package": "com.pongrules.pongrules",
+      "publishBundlePath": "android/app/src/main/assets/shell-app.bundle",
+      "publishManifestPath": "android/app/src/main/assets/shell-app-manifest.json"
     }
   }
 }
